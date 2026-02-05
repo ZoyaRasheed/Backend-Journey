@@ -16,13 +16,29 @@ emitter.on('second', (username)=>{
     console.log(`Helllow ${username}`)
 })
 
-
-
 //2..... Emit the event (while emitting the event you can aslo pass arguments)
 emitter.emit('first')
 //now here zoya is passed as an argument
 emitter.emit('second', 'zoya')
 
-
+// applying listeners
+const myListener = () => console.loh('My first listener')
+emitter.on('first', myListener)
+emitter.emit('first')
 // To remove the listeners 
 
+emitter.removeListener('first',myListener )
+emitter.emit('first') // now here after removing the listener we won't be able to emit the event again
+
+
+
+// we can list the listeners on events too , its gives us arrays for multicallable and one listener for single callable
+console.log(emitter.listeners('first'))
+
+
+// we can handle the errors also using the event and event emitter 
+
+emitter.on('error', (err)=>{
+    console.error(`Error occured : ${err.message}`)
+})
+emitter.emit('error',new Error('Something went wrong'))

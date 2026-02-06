@@ -3,6 +3,7 @@ import ChatRoom from "./chatRoom.js";
 const chat = new ChatRoom()
 
 chat.on('join', (user)=>{
+    
     console.log(`${user} joined the chat`)
 })
 chat.on('message', (user,message)=>{

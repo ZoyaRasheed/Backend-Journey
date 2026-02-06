@@ -4,7 +4,6 @@ export default class ChatRoom extends EventEmitter{
     constructor(){
         super()
         this.users = new Set();
-    
     }
 
     // now we can add functionalities

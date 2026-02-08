@@ -1,7 +1,7 @@
 import express from "express";
 import router from "./Routers/book.routes.js";
 import loggermiddleware from './middlewares/logger.js'
-
+import 'dotenv/config'
 
 //Keeping all the content into the separate files--> Model-View-Controller (MVC) pattern, which is crucial for building scalable API architectures. 
 const app = express();

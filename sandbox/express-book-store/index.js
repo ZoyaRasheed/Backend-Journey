@@ -1,5 +1,6 @@
 import express from "express";
-import router from "./Routers/book.routes.js";
+import bookRouter from "./Routers/book.routes.js";
+import authorRouter from "./Routers/author.routes.js"
 import loggermiddleware from './middlewares/logger.js'
 import 'dotenv/config'
 
@@ -12,11 +13,9 @@ const PORT = 3000;
 app.use(express.json())
 
 // this line is for doing it using router folder too 
-app.use('/books',router)
+app.use('/books',bookRouter)
+app.use('/authors',authorRouter)
 app.use(loggermiddleware)
-app.get("/", (req, res) => {
-  res.end("helllllow");
-});
 
 
 const onListening = ()=>{

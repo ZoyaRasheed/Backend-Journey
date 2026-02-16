@@ -4,7 +4,7 @@ import { usersTable } from "../db/schema.js";
 import { usersSession } from "../db/schema.js";
 import { randomBytes, createHmac } from "node:crypto";
 import { eq } from "drizzle-orm";
-import {jwt} from 'jsonwebtoken'
+import jwt from 'jsonwebtoken'
 
 const router = express.Router();
 
@@ -88,6 +88,7 @@ router.post("/login", async (req, res) => {
       email: usersTable.email,
       password: usersTable.password,
       salt: usersTable.salt,
+      role : usersTable.role
     })
     .from(usersTable)
     .where((table) => eq(table.email, email));
@@ -118,7 +119,8 @@ router.post("/login", async (req, res) => {
   const payload = {
     id: existingUser.id,
     name : existingUser.name,
-    email: existingUser.email
+    email: existingUser.email,
+    role : existingUser.role
   }
    // no need to store the token in the database 
   const token = jwt.sign(payload,process.env.JWT_SECRET)

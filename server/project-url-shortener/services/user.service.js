@@ -33,3 +33,4 @@ const [user] = await db
 
     return user
 }
+

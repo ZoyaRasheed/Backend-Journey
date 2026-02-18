@@ -67,4 +67,6 @@ const login = async (req, res) => {
   const token = await createUserToken({ id: user.id });
   return res.status(200).json({ token });
 };
+
+
 export { signup, login };

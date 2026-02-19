@@ -10,6 +10,7 @@ import "dotenv/config";
 
 const signup = async (req, res) => {
   //   const { firstname, lastname, email, password } = req.body;
+     console.log(req.body)
   const validationResult = await signupPostRequestBodySchema.safeParseAsync(
     req.body,
   );

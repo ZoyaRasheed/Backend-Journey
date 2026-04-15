@@ -150,7 +150,7 @@ The difference in practice:
 | **Portability** | OK, but heavy | Excellent |
 | **Use Case** | Full OS-level isolation needed | App packaging & microservices |
 
-> ** Insight 🧠**: Docker containers aren't "mini VMs". They're isolated **processes** running on the same kernel. This is why they're so fast and lightweight — but also why a container running a Linux image needs a Linux kernel to host it (Docker Desktop on Mac/Windows runs a tiny Linux VM behind the scenes to handle this).
+> **Insight 🧠**: Docker containers aren't "mini VMs". They're isolated **processes** running on the same kernel. This is why they're so fast and lightweight — but also why a container running a Linux image needs a Linux kernel to host it (Docker Desktop on Mac/Windows runs a tiny Linux VM behind the scenes to handle this).
 
 ---
 
@@ -450,7 +450,6 @@ docker run -d \
 ```
 
 ---
-
 
 ## Wrapping Up 🎁
 
